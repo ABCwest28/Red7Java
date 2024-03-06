@@ -1,10 +1,11 @@
-
+import java.util.ArrayList;
 
 public class Player {
     protected int id;
     protected Palette palette;
     protected Hand hand;
     protected Game game;
+    protected Card intentCard;
 
     public Player(int id, Game game) {
         this.id = id;
@@ -52,15 +53,15 @@ public class Player {
             System.out.println("There isn't such card in hand : " + card);
     }
 
-
     //TODO нужно придумать как проверять и кто проверять должен
-    public void checkWin(Card cardFromRulesPile) {
-        System.out.println(palette.getRuledCards(cardFromRulesPile));
+    public ArrayList<Card> getRuledCards(Card cardFromRulesPile, Card intentCard) {
+        this.intentCard = intentCard;
+        return palette.getRuledCards(cardFromRulesPile);
     }
 
     @Override
     public String toString() {
-        return "Player (id = " + id + ")\n"
+        return "Player id = " + id + ":\n"
                 + palette + "\n"
                 + hand;
     }

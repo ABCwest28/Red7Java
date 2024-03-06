@@ -2,25 +2,21 @@ import java.util.ArrayList;
 
 public class Palette {
     private ArrayList<Card> cards = new ArrayList<>();
-    private int numOfCards = 0;
 
     protected void addCard(Card card) {
         cards.add(card);
-        ++numOfCards;
     }
 
     protected void removeCard(Card card) {
         cards.remove(card);
-        --numOfCards;
     }
 
     protected void removeCard(int index) {
         cards.remove(index);
-        --numOfCards;
     }
 
     protected ArrayList<Card> getRuledCards(Card cardFromRulesPile) {
-        ArrayList<Card> ruledCards = new ArrayList<Card>();
+        ArrayList<Card> ruledCards = new ArrayList<>();
 
         switch (cardFromRulesPile.valueOfColor) {
             case 7:
@@ -115,6 +111,7 @@ public class Palette {
                     }
                 }
                 break;
+
             case 2:
                 int savedColor;
                 boolean wasFound;
@@ -145,6 +142,7 @@ public class Palette {
                     }
                 }
                 break;
+
             case 1:
                 for (Card card : cards) if (card.number < 4) ruledCards.add(card);
                 break;
