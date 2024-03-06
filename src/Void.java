@@ -21,7 +21,10 @@ public class Void {
         System.out.println(game.players.get(2));
         System.out.println("Id of winner: " + game.getIdWinner());
 
-        game.players.get(2).tryToDiscardCard(0);
+        game.players.get(2).tryToPlayThenDiscardCard(0, 1);
 
+        System.out.println(game.players.get(0));
+        System.out.println(game.players.get(1));
+        System.out.println(game.players.get(2));
     }
 }
