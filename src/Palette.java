@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Palette {
-    private ArrayList<Card> cards = new ArrayList<>();
+    protected ArrayList<Card> cards = new ArrayList<>();
 
     protected void addCard(Card card) {
         cards.add(card);

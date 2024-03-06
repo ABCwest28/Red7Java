@@ -15,7 +15,7 @@ public class Game {
         }
     }
 
-    public int getIdWinner(Card intentCard) {
+    public int getIdWinner() {
         class DataToCheck {
             int id;
             ArrayList<Card> cards;
@@ -27,10 +27,10 @@ public class Game {
                 isExcluded = false;
             }
         }
-        ArrayList<DataToCheck> listDataToChecks = new ArrayList<>(players.size());
+        ArrayList<DataToCheck> listDataToChecks = new ArrayList<>();
 
         for (int i = 0; i < players.size(); ++i) {
-            listDataToChecks.add(new DataToCheck(i, players.get(i).getRuledCards(rulesPile, intentCard)));
+            listDataToChecks.add(new DataToCheck(i, players.get(i).getRuledCards(rulesPile)));
         }
 
         // Проверяем по кол-ву карт - исключаем у кого меньше карт
@@ -56,6 +56,5 @@ public class Game {
 
         return idOfPlayerWithHighestCard;
     }
-
 
 }
